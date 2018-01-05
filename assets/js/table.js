@@ -13,9 +13,9 @@ function empty_Table()
         }
         else
         {
-            document.write("<td></td>");
-            document.write("<td></td>");
-            document.write("<td></td>");
+            document.write("<td>",i,"</td>");
+            document.write("<td>00</td>");
+            document.write("<td>00</td>");
         }
         document.write("</tr>");
     }

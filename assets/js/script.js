@@ -1,6 +1,7 @@
 
 var count = 0;
 var THqueue = [];
+var sEle = [];
 
 var hum = document.querySelector('humidity');
 var tem = document.querySelector('temperature');
@@ -35,7 +36,6 @@ setInterval(ShowClock, 1000);
    
 var tmax = 0, tmin = 99, tavg, ttotal = 0;
 var hmax = 0, hmin = 99, havg, htotal = 0;
-var countf = 0;
 
 var myRef = new Firebase('https://testiot-2018.firebaseio.com/');
         
@@ -50,11 +50,10 @@ myRef.on('child_changed', function(snapshot){
     ttotal = ttotal + t;
     htotal = htotal + h;
 
-    tavg = Number(ttotal/countf).toFixed(2);
-    havg = Number(htotal/countf).toFixed(2);
-
     count = count + 1;
-    countf += 1;
+
+    tavg = Number(ttotal/count).toFixed(2);
+    havg = Number(htotal/count).toFixed(2);
 
     if(t > tmax)
     {
@@ -86,9 +85,10 @@ myRef.on('child_changed', function(snapshot){
 
     if(count == 11)
     {
-        //ttotal -= THqueue[11][1];
-        //htotal -= THqueue[11][0];
-        THqueue.shift();
+        sEle[0] = THqueue.shift();
+        ttotal -= sEle[0][1];
+        htotal -= sEle[0][0];
+        
         count = count - 1;
     }
     
