@@ -104,5 +104,3 @@ myRef.on('child_changed', function(snapshot){
     
 });
 
-
-
