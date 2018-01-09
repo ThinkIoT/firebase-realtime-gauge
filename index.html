@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <link rel="icon" href="media/icon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Think-IoT Realtime Database Testing Web App</title>
+    <title>Think-IoT | Realtime Database | Testing Web App</title>
     <script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/highcharts-more.js"></script>
     <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
     <script type='text/javascript' src='https://code.jquery.com/jquery-2.1.0.js'></script>
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -48,25 +54,69 @@
             <div class="col-md-4" id="container-hum" style="width: 300px; height: 200px"></div>
             <div class="col-md-4" id="container-temp" style="width: 300px; height: 200px"></div>    
         </div>
-        <div class="row">
-            <div id="elem" class="col-md-4">
-                Time: <clock></clock><br>
-                Humidity: <humidity></humidity><br>
-                Temperature: <temperature></temperature><br>
-                <br>
-            </div> 
-            <div id="elem" class="col-md-4">
-                Temp-Avg : <tavg></tavg><br>
-                Min: <tmin></tmin><br>
-                Max: <tmax></tmax><br>
-                <br>
-            </div>
-            <div id="elem" class="col-md-4">
-                Humidity-Avg : <havg></havg><br>
-                Min: <hmin></hmin><br>
-                Max: <hmax></hmax><br>
-                <br>
-            </div>
+        <div class="row" id="panel-1x">
+        <div class="col-lg-4 col-md-4 col-sm-4">
+			<div class="panel panel-info">
+				<div class="panel-heading"><b>Sensors Data</b></div>
+				<div class="panel-body">
+					<div class="col-lg-6 col-md-6 col-sm-6">
+						<div class="panel panel-success">
+							<div class="panel-heading"><b>Temperature: <temperature></temperature></b></div>
+						</div>
+					</div>
+					<div class="col-lg-6 col-md-6 col-sm-6">
+						<div class="panel panel-success">
+							<div class="panel-heading"><b>Humidity: <humidity></humidity></b></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>	
+
+		<div class="col-lg-4 col-md-4 col-sm-4">
+				<div class="panel panel-info">
+					<div class="panel-heading"><b>Humidity</b></div>
+					<div class="panel-body">
+						<div class="col-lg-3 col-md-3 col-sm-3">
+							<div class="panel panel-success">
+								<div class="panel-heading"><b>Max: <hmax></hmax></b></div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-3 col-sm-3">
+							<div class="panel panel-success">
+								<div class="panel-heading"><b>Min: <hmin></hmin> </b></div>
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-6 col-sm-6">
+							<div class="panel panel-success">
+								<div class="panel-heading"><b>Average: <havg></havg> </b></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>	
+			<div class="col-lg-4 col-md-4 col-sm-4">
+					<div class="panel panel-info">
+						<div class="panel-heading"><b>Temperature</b></div>
+						<div class="panel-body">
+							<div class="col-lg-3 col-md-3 col-sm-3">
+								<div class="panel panel-success">
+									<div class="panel-heading"><b>Max: <tmax></tmax></b></div>
+								</div>
+							</div>
+							<div class="col-lg-3 col-md-3 col-sm-3">
+								<div class="panel panel-success">
+									<div class="panel-heading"><b>Min: <tmin></tmin></b></div>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-6">
+								<div class="panel panel-success">
+									<div class="panel-heading"><b>Average: <tavg></tavg> </b></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>	    
         </div>
     </div>
     <script src="assets/js/script.js"></script>
